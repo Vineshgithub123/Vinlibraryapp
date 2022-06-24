@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="text-center">
+					<h1> Please Signup</h1>
+
+				</div>
+				<form #usersignup="ngForm"  (ngSubmit)="signUp()">
+          <div class="form-group">
+					  <label for="exampleInputEmail1">Fullname</label>
+					  <input  type="text" class="form-control" [(ngModel)]="newuser.fullname" name="fullname" placeholder="Fullname" required>
+                      <!-- <span *ngFor="signupform.control['fullname'].hasError(required)">First name required</span> -->
+					</div>
+          <div class="form-group">
+					  <label for="exampleInputEmail1">Phonenumber</label>
+					  <input type="number" class="form-control"  [(ngModel)]="newuser.mobile" name="mobile" placeholder="Phonenumber" required>
+                      <!-- <span class="text-danger" *ngIf="signupform.controls['mobile'].dirty && signupform.hasError('required','mobile')">Please enter 6 digit Mobile Number</span> -->
+
+					</div>
+					<div class="form-group">
+					  <label for="exampleInputEmail1">Email address</label>
+					  <input type="email" class="form-control" [(ngModel)]="newuser.email" name="emil" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" #email="ngModel" class.is-invalid="email.invalid && email.touched " placeholder="Email">
+					  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					  <small class="text-danger" [class.d-none]="email.valid || email.touched"> Enter an Email! EG:abc@abc.com</small>
+                      <!-- <span class="text-danger" *ngIf="signupform.controls['email'].dirty && signupform.hasError('required','email')">Email is required</span> -->
+
+					</div>
+					<div class="form-group">
+					  <label for="exampleInputPassword1">Password</label>
+					  <input  type="password" class="form-control" [(ngModel)]="newuser.password" name="pasword" placeholder="Password" #password="ngModel" class.is-invalid="password.invalid && password.touched " minlength="5">
+					  <small class="text-danger" [class.d-none]="password.valid || password.touched"> Enter Password of Minimum 5 Numbers</small>
+
+                      <!-- <span class="text-danger" *ngIf="signupform.controls['password'].dirty && signupform.hasError('required','password')">Please Enter Password</span> -->
+
+					</div>
+					<div class="form-check">
+					  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+					  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+					</div>
+					<button type="submit" [disabled]="usersignup.form.invalid"  class="btn btn-primary">Submit</button>
+				  </form><br>
+          <a routerLink="/login">Already Registered? Login</a>
+			</div>
+		</div>
+	</div>
+</div>

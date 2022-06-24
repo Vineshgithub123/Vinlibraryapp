@@ -1,0 +1,21 @@
+<app-loggedinheader></app-loggedinheader>
+
+<div class="container mx-auto mt-4" >
+    <div class="row" *ngFor ="let Book of Books">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+    <img [src]="Book.Imageurl" class="card-img-top" alt="image">
+    <div class="card-body">
+      <h5 class="card-title">{{Book.Authorname}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{Book.Bookname}}</h6>
+      <p class="card-text">{{Book.Genre}}</p>
+      <p class="card-text">{{Book.Bookcode}}</p>
+         <a routerLink="/update" class="btn mr-2" (click)="updatebook(Book._id)"><i class="fas fa-edit"></i>Edit</a>
+      <!-- <a  class="btn " (click)="deletebook(book)"><i class="fa fa-trash"></i> Delete</a> -->
+      <button class="btn btn-danger" style="cursor:pointer" (click)="deletebook(Book)"> Delete</button>
+    </div>
+    </div>
+      </div>    
+ 
+  </div>
+    </div>

@@ -1,0 +1,19 @@
+.navbar{
+    height: 150PX;
+    background-color: hsla(205,46%,30%,1);
+    
+}
+.navbar a{
+    font-size: 25px;
+
+}
+
+.navbar-nav{
+ margin-left: 900px;
+
+}
+.nav-item{
+    margin-left: 40px;
+    font-size: 25px;
+
+}

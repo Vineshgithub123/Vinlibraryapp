@@ -91,29 +91,43 @@ app.get('/Books',function(req,res){
 
 
  app.post('/Signup',function(req,res){
-console.log(req.body);
-  var newuser ={
+console.log('hh');
+  var newusers ={
     
-    fullname: req.body.user.fullname,
-    mobile:req.body.user.mobile,
-    email:req.body.user.email,
-    password:req.body.user.password
+    fullname: req.body.users.fullname,
+    mobile:req.body.users.mobile,
+    email:req.body.users.email,
+    password:req.body.users.password
 }  
-var newuser = new signupdetails(newuser);
+var newuser = new signupdetails(newusers);
 console.log(newuser);
 newuser.save();
    });
 
+  //  app.post('/insert',function(req,res){
+  //   console.log(req.body._id);
+  //     var products={
+  //       Imageurl:req.body.item.Imageurl,
+  //       Authorname:req.body.item.Authorname,
+  //       Genre:req.body.item.Genre,
+  //       Bookcode:req.body.item.Bookcode,
+  //       Bookname:req.body.item.Bookname
+  //     }
+  //     var product = new Booklists(products);
+  //     product.save()
+  //   })
+
 
 app.post('/login',function(req,res){
+  console.log(req.body);
 var email = req.body.email;
 var password = req.body.password
 console.log(email);
 signupdetails.findOne({email})
-.then(user=>{
-  console.log(user);
+.then(users=>{
+  console.log(users);
 
-  if(user&&user.password==password){
+  if(users&&users.password==password){
   return res.json('success')
   }else{
     res.status(401).send('Please Enter Email andPassword')

@@ -1,0 +1,38 @@
+.card{
+    margin-top: 65%;
+    border:none;
+    width:500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 520px;
+    transform: translate(-50%,-50%);
+    background: hsla(205,46%,30%,1);
+    background: linear-gradient(90deg,hsla(205,46%,30%,1)0%,hsla(205,46%,30%,1)100%);
+}
+.card button{
+    margin-left: 165px;
+   }
+.container a{
+    color:white;
+    margin-left: 100px;
+}
+.navbar{
+    height: 150PX;
+    background-color: hsla(205,46%,30%,1);
+    
+}
+.navbar a{
+    font-size: 25px;
+
+}
+
+.navbar-nav{
+ margin-left: 900px;
+
+}
+.nav-item{
+    margin-left: 40px;
+    font-size: 25px;
+
+}
